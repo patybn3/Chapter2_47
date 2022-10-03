@@ -1,2 +1,2 @@
-public interface StackInterface {
+public interface StackInterface<T> {
 }
