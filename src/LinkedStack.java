@@ -1,4 +1,3 @@
-import support.LLNode;
 
 public class LinkedStack<T> implements StackInterface<T>
 {
@@ -49,4 +48,75 @@ public class LinkedStack<T> implements StackInterface<T>
         return false;
     }
 
+    public String toString()
+    {
+        String getString = "";
+        if(isEmpty())
+        {
+            System.out.println("Error. Stack is Empty.");
+        }
+        LLNode item = top;
+        while(item != null)
+        {
+            getString = (String) item.getInfo();
+            System.out.print(getString + " ");
+            item = item.getLink();
+        }
+        System.out.println();
+        return getString;
+    }
+
+    public int size()
+    {
+        LLNode item = top;
+        int size = 0;
+
+        do
+        {
+            size++;
+            item = item.getLink();
+        }
+        while(item != null);
+
+        return size;
+    }
+
+    public void popSome(int count)
+    {
+        LLNode item = top;
+        for(int i = count; i > 0; i--)
+        {
+            if(item != null)
+                pop();
+
+            item = item.getLink();
+        }
+    }
+
+    public boolean swapStart()
+    {
+        T firstElement;
+        T sndElement;
+
+        if(top == null || top.getLink() == null)
+            return false;
+        firstElement = top.getInfo();
+        sndElement = top.getLink().getInfo();
+        pop();
+        pop();
+        push(firstElement);
+        push(sndElement);
+
+    return true;
+    }
+
+    public T popTop() {
+        if (isEmpty())
+            throw new StackUnderflowException("Pop attempted on an empty stack.");
+        else {
+            T info = top();
+            top = top.getLink();
+            return info;
+        }
+    }
 }
