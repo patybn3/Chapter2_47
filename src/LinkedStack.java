@@ -114,9 +114,9 @@ public class LinkedStack<T> implements StackInterface<T>
         if (isEmpty())
             throw new StackUnderflowException("Pop attempted on an empty stack.");
         else {
-            T info = top();
+            T item = top();
             top = top.getLink();
-            return info;
+            return item;
         }
     }
 }
