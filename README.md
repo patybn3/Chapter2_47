@@ -66,7 +66,7 @@ https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedli
 
 https://www.javatpoint.com/java-program-to-insert-a-new-node-at-the-beginning-of-the-singly-linked-list <br>
 
-I also worked with a tutor for popTop and toString
+I also worked with a tutor for swapStart() and toString()
 <hr>
 
 <h5>Technologies</hr>
