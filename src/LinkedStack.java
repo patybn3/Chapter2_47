@@ -2,7 +2,6 @@
 public class LinkedStack<T> implements StackInterface<T>
 {
     protected LLNode<T> top;   // reference to the top of this stack
-    int getItems;
 
     public LinkedStack()
     {
@@ -49,13 +48,12 @@ public class LinkedStack<T> implements StackInterface<T>
         return false;
     }
 
-    //custom methods start here
     public String toString()
     {
         String getString = "";
         if(isEmpty())
         {
-            System.out.println("Empty stack!");
+            System.out.println("Error. Stack is Empty.");
         }
         LLNode item = top;
         while(item != null)
@@ -83,7 +81,6 @@ public class LinkedStack<T> implements StackInterface<T>
         return size;
     }
 
-    //whatever number is passed will be popped given that number is within the size
     public void popSome(int count)
     {
         LLNode item = top;
@@ -96,7 +93,6 @@ public class LinkedStack<T> implements StackInterface<T>
         }
     }
 
-    //top two numbers will swap places
     public boolean swapStart()
     {
         T firstElement;
@@ -104,13 +100,10 @@ public class LinkedStack<T> implements StackInterface<T>
 
         if(top == null || top.getLink() == null)
             return false;
-//get the top two element
         firstElement = top.getInfo();
         sndElement = top.getLink().getInfo();
-//remove both from the stack now
         pop();
         pop();
-//push them back on stack but in reverse order so that swap can occur
         push(firstElement);
         push(sndElement);
 
@@ -121,11 +114,8 @@ public class LinkedStack<T> implements StackInterface<T>
         if (isEmpty())
             throw new StackUnderflowException("Pop attempted on an empty stack.");
         else {
-//get the top most element
             T info = top();
-//update the top
             top = top.getLink();
-//return topmost element
             return info;
         }
     }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Chapter2_47_PatriciaAntlitz extends LinkedStack
+public class Chapter2_47_PatriciaAntlitz
 {
     Scanner scnr = new Scanner(System.in);
     //user inputs
@@ -19,7 +19,8 @@ public class Chapter2_47_PatriciaAntlitz extends LinkedStack
         System.out.println("6)   |---- Swap Start (swapStart();) ----| ");
         System.out.println("7)   |---- Pop Some (popSome();) --------| ");
         System.out.println("8)   |---- Print MENU -------------------| ");
-        System.out.println("9)   |---- EXIT -------------------------| ");
+        System.out.println("9)   |---- Pop Top Item (popTop()) ------| ");
+        System.out.println("10)  |---- EXIT -------------------------| ");
         System.out.println("What operation would you like to perform? (Enter The Corresponding Number.)");
     }
     //this method holds all the calls
@@ -101,6 +102,10 @@ public class Chapter2_47_PatriciaAntlitz extends LinkedStack
                     printMenu();
                     break;
                 case 9:
+                    System.out.println("Pop Top Element:");
+                    System.out.println("Popped: " + ((LinkedStack<String>) testDriverLimit).popTop());
+                    break;
+                case 10:
                     //ends the loop
                     keepGoing = false;
                     break;
