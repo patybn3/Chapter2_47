@@ -1,4 +1,3 @@
-
 public class LinkedStack<T> implements StackInterface<T>
 {
     protected LLNode<T> top;   // reference to the top of this stack
@@ -48,14 +47,18 @@ public class LinkedStack<T> implements StackInterface<T>
         return false;
     }
 
+    //prints stack by turning it into a string
     public String toString()
     {
         String getString = "";
+        //exception
         if(isEmpty())
         {
             System.out.println("Error. Stack is Empty.");
         }
+
         LLNode item = top;
+
         while(item != null)
         {
             getString = (String) item.getInfo();
@@ -114,9 +117,9 @@ public class LinkedStack<T> implements StackInterface<T>
         if (isEmpty())
             throw new StackUnderflowException("Pop attempted on an empty stack.");
         else {
-            T info = top();
+            T item = top();
             top = top.getLink();
-            return info;
+            return item;
         }
     }
 }

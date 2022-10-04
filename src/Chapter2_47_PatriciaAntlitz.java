@@ -1,3 +1,30 @@
+/* Problem Set 2 - 47 - a - e Chapter 2 Object-Oriented Data Structures Using Java, 4th Edition
+-------------------------------------------------------------*
+/*
+Name: Patricia Antlitz
+Date: 10/02/2022
+Class: CIS-252 Computer Science II - NECC Fall 2022
+
+ * Please read the README file for detailed information about this program.
+
+ * This file is the main class that runs this program
+ * testDriverLimit object is created from the ArrayBoundedStack.java which implements an interface, StackInterface.java class
+ * The following files are NOT original to this code (not coded by me):
+    * StackInterface.java
+    * StackUnderflowException.java
+    * StackOverflowException.java
+    * LLNode.java
+ * The following file was partially coded by me (methods added): LinkedStack.java
+ * It will take an user input as the size of the array
+ * It will ask the user to enter the numbers to form the stack
+ * In this program you can: Push to a stack (insert), pop from the top (remove), display the top element,
+    pop a given number of elements, print the stack, swap the top two element's positions, print the menu, print the stack size.
+ */
+
+/**
+ * @author Patricia N. Antlitz
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Chapter2_47_PatriciaAntlitz
@@ -79,11 +106,7 @@ public class Chapter2_47_PatriciaAntlitz
                 case 5:
                     //total size of the array
                     System.out.println("Size of Stack:");
-                    /*
-                    casted, the following methods called are not part of the interface. I coded it this way so it can be used
-                    by the current object and continue to use the values generated before, if I called size() by itself
-                    (given this class extends ArrayBoundedStack.java) it would use the preset array of 100 length.
-                    */
+                    //casted, the following methods called are not part of the interface.
                     System.out.println(((LinkedStack<String>) testDriverLimit).size());
                     break;
                 case 6:
